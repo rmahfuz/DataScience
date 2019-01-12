@@ -1,0 +1,12 @@
+The value diff = |z|-|z_alpha| was looked at for each feature. If diff is greater than 0, that means |z| is greater than |z_alpha|, which indicates that there is a significant difference in the means of the two sets, the training set and testing set.
+Feature 3 has a significant difference between training and testing sets, because diff for that feature is 0.182509008308, which is greater than 0.
+
+|z|-|z_apha| for feature 1 = -1.15170914902
+|z|-|z_apha| for feature 2 = -1.52897512906
+|z|-|z_apha| for feature 3 = 0.182509008308
+|z|-|z_apha| for feature 4 = -1.34727558843
+|z|-|z_apha| for feature 5 = -1.37662943642
+|z|-|z_apha| for feature 6 = -1.27591560089
+|z|-|z_apha| for feature 7 = -1.21950866333
+|z|-|z_apha| for feature 8 = -0.592983893862
+

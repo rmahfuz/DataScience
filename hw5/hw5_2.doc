@@ -1,0 +1,2 @@
+The generated image using knn in hw_2.png shows a good resemblance of the foreground points with the points corresponding to the cat.
+It shows more points as foreground than what the naive bayes did.

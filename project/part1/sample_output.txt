@@ -1,0 +1,16 @@
+len(yes) = 1813, len(train_yes) = 1722, len(test_yes) = 91
+len(no ) = 2788, len(train_no ) = 2649, len(test_no ) = 139
+Result: With training:testing ratio of 0.95, accuracy = 1 - 43.0/230 = 0.813043478261
+Fraction of non-spam incorrectly detected as spam = 0.244604316547, fraction of spam incorrectly detected as non-spam = 0.0989010989011
+len(yes) = 1813, len(train_yes) = 1632, len(test_yes) = 181
+len(no ) = 2788, len(train_no ) = 2509, len(test_no ) = 279
+Result: With training:testing ratio of 0.9, accuracy = 1 - 119.0/460 = 0.741304347826
+Fraction of non-spam incorrectly detected as spam = 0.322580645161, fraction of spam incorrectly detected as non-spam = 0.160220994475
+len(yes) = 1813, len(train_yes) = 1541, len(test_yes) = 272
+len(no ) = 2788, len(train_no ) = 2370, len(test_no ) = 418
+Result: With training:testing ratio of 0.85, accuracy = 1 - 197.0/690 = 0.714492753623
+Fraction of non-spam incorrectly detected as spam = 0.38038277512, fraction of spam incorrectly detected as non-spam = 0.139705882353
+len(yes) = 1813, len(train_yes) = 1450, len(test_yes) = 363
+len(no ) = 2788, len(train_no ) = 2230, len(test_no ) = 558
+Result: With training:testing ratio of 0.8, accuracy = 1 - 239.0/921 = 0.740499457112
+Fraction of non-spam incorrectly detected as spam = 0.345878136201, fraction of spam incorrectly detected as non-spam = 0.126721763085

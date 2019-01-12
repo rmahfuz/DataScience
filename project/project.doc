@@ -1,0 +1,129 @@
+Partner 1 name: Rehana Mahfuz       Purdue login: rmahfuz   GitHub username: rmahfuz
+Partner 2 name: Nivedita Nighojkar  Purdue login: nnighojk  Github username: Nnnighojk
+
+=====================================================================================================================
+Part1: Email spam prediction
+Scenario: Using the 57 features about an email given, we want to predict whether or not an email is spam. Code is in part1/naive_bayes.py and part1/knn.py
+
+In the proposal we had indicated that we would use 30% of the data as training and 70% as testing. However, it makes sense to use more of the data as training so that our model is more robust. So we decided to use 80%, 85%, 90% and 95% of the data as training set. Here is what we found:
+---------------------------------------------------------------------------------------------------------------------
+Naive Bayes results:
+
+Result: With training:testing ratio of 0.8, accuracy = 1 - 239.0/921 = 0.740499457112
+Fraction of non-spam incorrectly detected as spam = 0.345878136201, fraction of spam incorrectly detected as non-spam = 0.126721763085
+
+Result: With training:testing ratio of 0.85, accuracy = 1 - 197.0/690 = 0.714492753623
+Fraction of non-spam incorrectly detected as spam = 0.38038277512, fraction of spam incorrectly detected as non-spam = 0.139705882353
+
+Result: With training:testing ratio of 0.9, accuracy = 1 - 119.0/460 = 0.741304347826
+Fraction of non-spam incorrectly detected as spam = 0.322580645161, fraction of spam incorrectly detected as non-spam = 0.160220994475
+
+Result: With training:testing ratio of 0.95, accuracy = 1 - 43.0/230 = 0.813043478261
+Fraction of non-spam incorrectly detected as spam = 0.244604316547, fraction of spam incorrectly detected as non-spam = 0.0989010989011
+
+Discussion: It is not surprising that the more data we use for training, the higher the accuracy becomes.
+What is unsatisfactory is how many non-spam emails also get detected as spam. Important emails may be lost.
+
+---------------------------------------------------------------------------------------------------------------------
+K Nearest Neighbors results:
+
+Result: With training:testing ratio of 0.8, accuracy = 1 - 262.0/921 = 0.71552660152
+Fraction of non-spam incorrectly detected as spam = 0.270609318996, fraction of spam incorrectly detected as non-spam = 0.305785123967
+
+Result: With training:testing ratio of 0.85, accuracy = 1 - 174.0/690 = 0.747826086957
+Fraction of non-spam incorrectly detected as spam = 0.232057416268, fraction of spam incorrectly detected as non-spam = 0.283088235294
+
+Result: With training:testing ratio of 0.9, accuracy = 1 - 109.0/460 = 0.763043478261
+Fraction of non-spam incorrectly detected as spam = 0.204301075269, fraction of spam incorrectly detected as non-spam = 0.28729281768
+
+Result: With training:testing ratio of 0.95, accuracy = 1 - 37.0/230 = 0.839130434783
+Fraction of non-spam incorrectly detected as spam = 0.0863309352518, fraction of spam incorrectly detected as non-spam = 0.274725274725
+
+Discussion: KNN is found to give better accuracy than naive bayes in 3 of the 4 cases.
+Another desirable result from KNN is that number of non-spam emails that got detected as spam is lower than in naive bayes. However, a tradeoff is that the number of spam emails that got detected as non-spam is higher for KNN than for naive bayes.
+
+=====================================================================================================================
+Part 2:
+---------------------------------------------------------------------------------------------------------------------------
+Scenario:
+There are 5 predictors/features of crime:
+1) annual police funding in $/resident
+2) % of people 25 years+ with 4 yrs. of high school
+3) % of 16 to 19 year-olds not in highschool and not highschool graduates
+4) % of 18 to 24 year-olds in college
+5) % of people 25 years+ with at least 4 years of college
+There are two outcome variables:
+1) Total overall reported crime rate per 1 million residents predictions
+2) Reported violent crime rate per 100,000 residents 
+Goal: We want to influence the outcome variables (reduce them), which is why we are studying how the outcome variables depend on the features/predictor variables.
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+Approach 1 (described in proposal): Using y=aX+b model to find coefficients for each feature to predict outcome variable. This approach is similar to that in homework 4. Code is in part2/analyze.py
+Using this method does not give us helpful results because the size of the training data (45 samples) is very small.The predicted values are very different from the actual values, with an absolute deviation of about 302 for outcome 1 predictions, and about 285 for outcome 2 predictions.
+---------------------------------------------------------------------------------------------------------------------
+Outcome 1 predictions:
+actual value: -270.2, predicted value: 31.390009794
+actual value: -338.2, predicted value: -37.0201415178
+actual value: 450.8, predicted value: -85.4795335064
+actual value: 270.8, predicted value: 51.8424487662
+actual value: -113.2, predicted value: 39.267216464
+Total signed error: -2.27373675443e-13, absolute error per prediction: 302.094833896
+Prediction coefficients:
+1) annual police funding in $/resident: 79.806409906
+2) % of people 25 years+ with 4 yrs. of high school: -34.5021185399
+3) % of 16 to 19 year-olds not in highschool and not highschool graduates: 42.9857522242
+4) % of 18 to 24 year-olds in college: -20.5294795592
+5) % of people 25 years+ with at least 4 years of college: -2.70896149313
+----------------------------------------------------------------------------------------------------
+Outcome 2 predictions:
+actual value: -13.6, predicted value: 63.8161654732
+actual value: -580.6, predicted value: -77.9571141511
+actual value: 403.4, predicted value: -179.404191788
+actual value: -15.6, predicted value: 116.577489987
+actual value: 206.4, predicted value: 76.9676504781
+Total signed error: 4.54747350886e-13, absolute error per prediction: 284.894616524
+Prediction coefficients:
+1) annual police funding in $/resident: 176.362031755
+2) % of people 25 years+ with 4 yrs. of high school: -72.1404188243
+3) % of 16 to 19 year-olds not in highschool and not highschool graduates: 74.132822986
+4) % of 18 to 24 year-olds in college: -52.7915098631
+5) % of people 25 years+ with at least 4 years of college: -9.12082823574
+
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+Approach 2: Calculated correlations between features and outcome to gain insight into how outcome changes with feature. We used Pearson's formula and 
+Kendall's formula. Code is in part2/correlation.py
+------------------------------------------------------------------------------------------------------------
+According to pearson's formula, correlation of total overall reported crime rate per 1 million residents with:
+1) annual police funding in $/resident:  0.533197785509
+2) % of people 25 years+ with 4 yrs. of high school:  -0.135459327267
+3) % of 16 to 19 year-olds not in highschool and not highschool graduates 0.322518671846
+4) % of 18 to 24 year-olds in college:  -0.175224013017
+5) % of people 25 years+ with at least 4 years of college:  -0.02628266913
+------------------------------------------------------------------------------------------------------------
+According to pearson's formula, correlation of reported violent crime rate per 100,000 residents with:
+1) annual police funding in $/resident:  0.509339450082
+2) % of people 25 years+ with 4 yrs. of high school:  -0.184444946464
+3) % of 16 to 19 year-olds not in highschool and not highschool graduates 0.291031409774
+4) % of 18 to 24 year-olds in college:  -0.199069948241
+5) % of people 25 years+ with at least 4 years of college:  -0.0455702293012
+
+------------------------------------------------------------------------------------------------------------
+According to kendall's formula, correlation of total overall reported crime rate per 1 million residents with:
+1) annual police funding in $/resident:  0.108571428571
+2) % of people 25 years+ with 4 yrs. of high school:  -0.451428571429
+3) % of 16 to 19 year-olds not in highschool and not highschool graduates 0.399183673469
+4) % of 18 to 24 year-olds in college:  -0.263673469388
+5) % of people 25 years+ with at least 4 years of college:  -0.245714285714
+------------------------------------------------------------------------------------------------------------
+According to kendall's formula, correlation of reported violent crime rate per 100,000 residents with:
+1) annual police funding in $/resident:  0.108571428571
+2) % of people 25 years+ with 4 yrs. of high school:  -0.451428571429
+3) % of 16 to 19 year-olds not in highschool and not highschool graduates 0.399183673469
+4) % of 18 to 24 year-olds in college:  -0.263673469388
+5) % of people 25 years+ with at least 4 years of college:  -0.245714285714
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+Observation: Among all the three methods, what we find consistent is the sign of the correlation coefficient for each feature. Both outcomes vary positively with features 1 and 3. Both outcomes vary negatively with features 2, 4 and 5. We conclude that in order to decrease crime, we should work towards decreasing the values of features 1 and 3, and increasing the values of features 2, 4 and 5.
+It is surprising to see how increasing feature 1, annual police funding per resident, actually increases crime. This is contary to common sense, but this relationship is confirmed by the three methods that we used. 
+=====================================================================================================================

@@ -1,0 +1,53 @@
+Solution to ques2:
+
+Confidence intervals for mean:
+For feature 1, Direct ConfInt : (1.230957, 1.469062), Bootstrapped ConfInt : (1.232154, 1.468748)
+For feature 2, Direct ConfInt : (3.585669, 3.672216), Bootstrapped ConfInt : (3.585658, 3.671225)
+For feature 3, Direct ConfInt : (63.113949, 64.61801), Bootstrapped ConfInt : (63.103085, 64.627896)
+For feature 4, Direct ConfInt : (-0.04619, 0.246901), Bootstrapped ConfInt : (-0.04839, 0.246414)
+For feature 5, Direct ConfInt : (0.174677, 0.258312), Bootstrapped ConfInt : (0.175246, 0.258874)
+For feature 6, Direct ConfInt : (-0.320603, -0.038129), Bootstrapped ConfInt : (-0.32273, -0.038756)
+For feature 7, Direct ConfInt : (6.679635, 6.82552), Bootstrapped ConfInt : (6.679784, 6.824943)
+For feature 8, Direct ConfInt : (21.532557, 27.23033), Bootstrapped ConfInt : (21.559314, 27.221643)
+
+The bootstrapped confidence intervals are indeed found to be similar to the directly calculated confidence intervals.
+
+Standard error for feature 1 = 11.2947939081
+Standard error for feature 2 = 83.1049627316
+Standard error for feature 3 = 85.5048931907
+Standard error for feature 4 = 0.681724918822
+Standard error for feature 5 = 5.22154736468
+Standard error for feature 6 = -1.27557177247
+Standard error for feature 7 = 93.1507125944
+Standard error for feature 8 = 8.55745125174
+
+Standard error was calculated as mu/sigma. It tells us how big the confidence interval is relative to the mean. A smaller magnitude of confidence interval means that the mean is more reliable.
+The magnitude of standard error is the least for feature 4, followed by feature 6. Therefore feature 4 has the most reliable sample mean, and feature 6 has the second-most reliable sample mean.
+--------------------------------------------------------------------------------------------------------------------------------
+
+Solution to bonus:
+
+These are the bootstrapped confidence intervals for the median, for each feature:
+
+Confidence intervals for median:
+For feature 1, bootstrapped confidence interval: (1.29, 1.54)
+For feature 2, bootstrapped confidence interval: (3.57, 3.68)
+For feature 3, bootstrapped confidence interval: (63.95, 65.48)
+For feature 4, bootstrapped confidence interval: (-0.68, 0.69)
+For feature 5, bootstrapped confidence interval: (0.0, 0.0)
+For feature 6, bootstrapped confidence interval: (-1.18, -0.45)
+For feature 7, bootstrapped confidence interval: (6.94, 7.05)
+For feature 8, bootstrapped confidence interval: (8.77, 18.61)
+
+Standard error for feature 1 = 10.863907445
+Standard error for feature 2 = 65.648324245
+Standard error for feature 3 = 84.1081266467
+Standard error for feature 4 = -0.0172495491232
+Standard error for feature 5 = nan              because both mu and sigma are 0.0
+Standard error for feature 6 = -2.23000787329
+Standard error for feature 7 = 123.885493783
+Standard error for feature 8 = 2.82100764286
+
+Feature 5 has the most reliable median, followed by feature 4.
+
+--------------------------------------------------------------------------------------------------------------------------------
