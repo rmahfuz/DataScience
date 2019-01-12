@@ -1,0 +1,16 @@
+What is interesting:
+The distribution of the sample means corresponds to the distribution of the data itself. 
+The first distribution of sample means looks laplacian.
+The second distribution of sample means looks exponential.
+The third distribution of sample means looks normal.
+
+Plot A:
+Mean of sample means = -0.0068983397  Actual mean =  -0.0108726418528
+Plot B:
+Mean of sample means = 3.0241220306  Actual mean =  2.935530171
+Plot C:
+Mean of sample means = 4.9185361  Actual mean =  4.97979685
+
+The mean of the sample means of each data set is close to the actual mean of the entire data set.
+
+Relevant plots are in the bonus_plots directory.

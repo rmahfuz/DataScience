@@ -1,0 +1,10 @@
+3) As k is increased, the shape of the histogram becomes more consistent and starts closely resembling the shape of the histogram with the entire data. In other words, the histogram becomes more accurate as k increases. 
+If I regenerate the histograms, the shapes are slightly different. The shape remains more consistent for higher value of k.
+prob1_plots/part3 directory contains all relevant plots for this part.
+
+5) The mean of these sample means is 75.06991. This also falls in the bin with maximum frequency, which covers the range 75-76. It is also normal to expect this mean of sample means to be close to the actual mean of the entire data set.
+Not surprisingly, this is close to the actual mean of the entire data set, which is 75.06305.
+The means of the samples are normally distributed around the actual mean of the entire data set. The distribution seems slightly left-skewed because the actual mean is very close to the left border of the bin it belongs to. 
+The variance decreases if the number of sample means is increased from 1000 to 10000 because more samples paint a more realistic picture. With 10000 samples, the mean of sample means (75.06841600000001) comes just a little closer to the actual mean.
+The relevant plots can be found in the prob1_plots directory.
+

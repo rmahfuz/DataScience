@@ -1,0 +1,3 @@
+1) This histogram tells me that there is a peak of scores in the 70-80 bin. There is also a good number of scores in the 20-40 range. Number of data points less than 10 and above 100 is very less.
+
+2) The red/green feature indicates which distribution a data point comes from. Both the red and the green distributions are normal distributions, but each normal distribution has different parameters (mean and deviation). I confirmed this using QQ-plots, after finding that the distributions look like normal distributions from observation. The prob3_plots directory has the plots.
