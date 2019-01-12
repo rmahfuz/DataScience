@@ -1,0 +1,25 @@
+1) The histogram is showing me a distribution where bins with scores 40-60 have the maximum number of data points (about 31000 students). An extremely negligible number of students got a score less than 20. Number of students that got scores between 20 and 30, 70 and 80, and 90 and 100 is also low. Number of students that scored between 30 and 40, and 60 and 70 is relatively higher. Number of students between scored 80 and 90 is about two times the number of students that scored betwene 30 and 40.
+
+2) This histogram seems more meaningful than the first one. It shows how the distribution peaks the highest around 50, and then peaks a little lesser around 90. But again, having a smaller number of bins may be better.
+
+3) I tried the cross-validation method to find optimal bin-width with 10, 50, 100, 150 and 200 bins. The sum of squares of frequencies are as follows:
+('10 bins: ', 593733542)
+('200 bins: ', 31770010)
+('100 bins: ', 63412322)
+('50 bins: ', 126503966)
+('150 bins: ', 42534224)
+The cross-validation scores are as follows:
+10 bins: -118751.4584
+50 bins: -126509.0263
+100 bins: -126829.7171
+150 bins: -127607.7762  optimal
+200 bins: -127085.7171
+150 bins happens to be optimal, out of the tested numbers of bins.
+A histogram with 150 bins also indicates how the distribution peaks the most around 50, and peaks a little lesser sround 90.
+
+4) The result is similar to that of the last part: there are two peaks: the highest peak is around 50, and the second-highest peak is around 90.
+If I use 1000 bins, not all of the bins have data: each bin represents 0.1 points on the math exam. It is not beneficial to use more than 1000 bins, because the number of data points in this 10% sample is 5000, and having more than 1000 bins would mean less than 5 scores per bin on an avergae. Even if we look at the original data which has 50000 observations, using more than 1000 bins would mean less than 50 scores per bin on an average, which is a small number of bins. The number of bin with no data will rise.
+
+5) Yes, there may be data sets where there are more observations in certain ranges than others. For example, let us look at ice-cream sale data over the year. During the winter, it may make sense to use wider bins because ice-cream sales will be low. However, during the summer, it may be helpful to have narrower bins because ice-cream sales are higher, and we really want to study trends in ice-cream sales during the season when it matters the most.
+
+6) In the plot 1000binsScore.png, the x-axis shows number of bins, and the y-axis shows the cross-validation score corresponding to each bin. It is observed that 500 bins gives the lowest cross-validation score. Hence 500 is the optimal number of bins.
