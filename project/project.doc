@@ -1,7 +1,3 @@
-Partner 1 name: Rehana Mahfuz       Purdue login: rmahfuz   GitHub username: rmahfuz
-Partner 2 name: Nivedita Nighojkar  Purdue login: nnighojk  Github username: Nnnighojk
-
-=====================================================================================================================
 Part1: Email spam prediction
 Scenario: Using the 57 features about an email given, we want to predict whether or not an email is spam. Code is in part1/naive_bayes.py and part1/knn.py
 
